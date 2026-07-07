@@ -1,0 +1,58 @@
+name: Receiver Verification
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  regression:
+    name: Full Regression
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes \
+            iverilog \
+            g++ \
+            make
+
+      - name: Verify committed golden vectors
+        run: |
+          test -f vectors/input_samples.csv
+          test -f vectors/matlab_expected.csv
+
+      - name: Set up Python environment
+        run: make setup
+
+      - name: Run complete receiver regression
+        run: make regression
+
+      - name: Display comparison reports
+        if: always()
+        run: |
+          if [ -f results/cpp_vs_matlab.txt ]; then
+            echo "C++ versus MATLAB"
+            echo "=================="
+            cat results/cpp_vs_matlab.txt
+          fi
+
+          if [ -f results/rtl_vs_matlab.txt ]; then
+            echo
+            echo "RTL versus MATLAB"
+            echo "=================="
+            cat results/rtl_vs_matlab.txt
+          fi
