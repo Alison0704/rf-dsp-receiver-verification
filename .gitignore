@@ -1,0 +1,61 @@
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# cocotb and simulator artifacts
+sim_build/
+results.xml
+*.vvp
+*.vcd
+*.fst
+*.lxt
+*.lxt2
+*.ghw
+
+# Generated build directory
+build/
+
+# Compiled C++ executable
+cpp/receiver_model
+
+# Generated model outputs
+vectors/cpp_expected.csv
+
+# Generated verification results
+results/rtl_output.csv
+results/cpp_vs_matlab.txt
+results/rtl_vs_matlab.txt
+
+# MATLAB temporary and autosave files
+*.asv
+*.m~
+*.slxc
+slprj/
+
+# C/C++ build artifacts
+*.o
+*.obj
+*.out
+*.dSYM/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# MATLAB workspace output
+vectors/receiver_results.mat
