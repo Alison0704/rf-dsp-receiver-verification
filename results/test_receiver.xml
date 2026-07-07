@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1783409315" />
-    <testcase name="test_receiver_against_matlab" classname="test_receiver" file="/Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/tb/cocotb/test_receiver.py" lineno="85" time="0.008072137832641602" sim_time_ns="335.0" ratio_time="41500.77797796615" />
+    <property name="random_seed" value="1783409416" />
+    <testcase name="test_receiver_against_matlab" classname="test_receiver" file="/Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/tb/cocotb/test_receiver.py" lineno="85" time="0.006807088851928711" sim_time_ns="335.0" ratio_time="49213.40198241743" />
   </testsuite>
 </testsuites>
