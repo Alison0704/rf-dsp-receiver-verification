@@ -45,7 +45,7 @@ rtl-check:
 		$(RTL_SOURCES)
 
 sim:
-	$(MAKE) -C tb/cocotb WAVES=1
+	WAVES=1 ./scripts/run_cocotb_suite.sh
 
 compare-rtl:
 	$(PYTHON) scripts/compare_rtl.py

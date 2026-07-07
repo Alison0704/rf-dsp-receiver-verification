@@ -1,0 +1,25 @@
+rm -f results.xml
+"/Library/Developer/CommandLineTools/usr/bin/make" -f Makefile results.xml
+mkdir -p /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/build/cocotb
+/opt/homebrew/bin/iverilog -o /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/build/cocotb/sim.vvp -s receiver_verification_top -g2012 -g2012 -Wall -gsupported-assertions -f /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/build/cocotb/cmds.f  /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/rtl/fir_filter.sv /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/rtl/qpsk_demapper.sv /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/rtl/receiver_top.sv /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/tb/assertions/receiver_assertions.sv /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/tb/assertions/receiver_verification_top.sv
+rm -f results.xml
+COCOTB_TEST_MODULES=test_receiver_random COCOTB_TESTCASE= COCOTB_TEST_FILTER= COCOTB_TOPLEVEL=receiver_verification_top TOPLEVEL_LANG=verilog \
+         /opt/homebrew/bin/vvp -M /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/.venv/lib/python3.11/site-packages/cocotb/libs -m libcocotbvpi_icarus   /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/build/cocotb/sim.vvp -none  
+     -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:94   in _embed_init_python              Using Python 3.11.9 interpreter at /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/.venv/bin/python
+     -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:79   in gpi_print_registered_impl       VPI registered
+     0.00ns INFO     cocotb                             Running on Icarus Verilog version 13.0 (stable)
+     0.00ns INFO     cocotb                             Seeding Python random module with 1783408550
+     0.00ns INFO     cocotb                             Initialized cocotb v2.0.1 from /Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/.venv/lib/python3.11/site-packages/cocotb
+     0.00ns INFO     cocotb                             Running tests
+     0.00ns INFO     cocotb.regression                  running test_receiver_random.test_receiver_randomized (1/1)
+                                                            Compare randomized RTL behavior against a Python model.
+  2020.00ns INFO     cocotb.receiver_verification_top   Random seed: 20260707
+  2020.00ns INFO     cocotb.receiver_verification_top   Verified 200 cycles: 144 accepted, 56 stalls, 140 valid outputs
+  2020.00ns INFO     cocotb.regression                  test_receiver_random.test_receiver_randomized passed
+  2020.00ns INFO     cocotb.regression                  *******************************************************************************************************
+                                                        ** TEST                                           STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+                                                        *******************************************************************************************************
+                                                        ** test_receiver_random.test_receiver_randomized   PASS        2020.00           0.02      82097.81  **
+                                                        *******************************************************************************************************
+                                                        ** TESTS=1 PASS=1 FAIL=0 SKIP=0                                2020.00           0.03      71257.91  **
+                                                        *******************************************************************************************************

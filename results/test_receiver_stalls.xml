@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1783409316" />
+    <testcase name="test_receiver_with_input_stalls" classname="test_receiver_stalls" file="/Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/tb/cocotb/test_receiver_stalls.py" lineno="75" time="0.0072782039642333984" sim_time_ns="460.0" ratio_time="63202.40573918171" />
+  </testsuite>
+</testsuites>

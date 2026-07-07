@@ -1,0 +1,19 @@
+{
+  "symbol_bins": {
+    "symbol_00": 2,
+    "symbol_01": 2,
+    "symbol_11": 1,
+    "symbol_10": 2
+  },
+  "special_bins": {
+    "i_equals_zero": 1,
+    "q_equals_zero": 1,
+    "maximum_positive": 1,
+    "minimum_negative": 1
+  },
+  "protocol_bins": {
+    "asynchronous_reset": 7,
+    "first_valid_on_fifth": 7,
+    "input_stall": 7
+  }
+}

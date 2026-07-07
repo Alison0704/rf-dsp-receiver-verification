@@ -12,7 +12,7 @@ VERILOG_SOURCES := \
 	$(PROJECT_ROOT)/tb/assertions/receiver_verification_top.sv
 
 COCOTB_TOPLEVEL := receiver_verification_top
-COCOTB_TEST_MODULES := test_receiver
+COCOTB_TEST_MODULES ?= test_receiver
 
 COMPILE_ARGS += -g2012
 COMPILE_ARGS += -Wall

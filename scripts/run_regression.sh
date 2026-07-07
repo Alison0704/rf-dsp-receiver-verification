@@ -72,8 +72,7 @@ iverilog \
 
 echo
 echo "[4/5] Running cocotb verification and RTL assertions"
-make -C "${PROJECT_ROOT}/tb/cocotb" clean
-make -C "${PROJECT_ROOT}/tb/cocotb" WAVES=1
+WAVES=1 "${PROJECT_ROOT}/scripts/run_cocotb_suite.sh"
 
 echo
 echo "[5/5] Comparing RTL output against MATLAB"

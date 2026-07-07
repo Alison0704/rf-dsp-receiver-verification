@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1783409320" />
+    <testcase name="test_receiver_functional_coverage" classname="test_receiver_coverage" file="/Users/alisonemilien/Projects/Verification/rf-dsp-receiver-verification/tb/cocotb/test_receiver_coverage.py" lineno="226" time="0.0074422359466552734" sim_time_ns="565.0" ratio_time="75918.04452987346" />
+  </testsuite>
+</testsuites>
